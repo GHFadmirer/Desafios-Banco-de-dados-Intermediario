@@ -60,4 +60,44 @@ join produtoestoque pe on pe.id_produto = p.id_produto;
 
 -- exercicio 2
 
+delete p from produto p 
+inner join produtocategoria pc on pc.id_produto = p.id_produto
+where pc.nome_categoria = 'roupas';
+-----------------------
 
+--tabela necessaria para ex3
+
+create table clientes(
+	id_cliente int not null primary key,
+	titulo varchar(10),
+	nome_primeiro varchar(20) not null,
+	nome_meio varchar(20),
+	nome_ultimo varchar(20) not null
+);
+
+insert into clientes(id_cliente, titulo, nome_primeiro, nome_meio, nome_ultimo) values
+(1,'Senhor','Michael','Hue','Jackson'),
+(2,'Sra.','Ferdinanda','Pereira','Paz');
+
+
+insert into clientes(id_cliente, nome_primeiro, nome_ultimo) values
+(3,'Jose','Silva'),
+(4,'Marcos','Trobbo');
+
+
+insert into clientes(id_cliente, titulo, nome_primeiro, nome_ultimo) values
+(5,'Doutor','Michael','Jackson'),
+(6,'Majestade','Pedro','Braganca');
+
+
+insert into clientes(id_cliente, nome_primeiro, nome_meio, nome_ultimo) values
+(7,'Franz','Ludwig','Ferdinand'),
+(8,'Pedro','de Alcantara','Gonzaga');
+
+--ex 3
+select concat(case when titulo is not null then titulo + ' ' else '' end,
+	nome_primeiro, 
+	case when nome_meio is not null then ' ' + nome_meio else '' end,
+	' ', 
+	nome_ultimo) NomeCompleto
+from clientes;
