@@ -77,25 +77,16 @@ create table clientes(
 
 insert into clientes(id_cliente, titulo, nome_primeiro, nome_meio, nome_ultimo) values
 (1,'Senhor','Michael','Hue','Jackson'),
-(2,'Sra.','Ferdinanda','Pereira','Paz');
-
-
-insert into clientes(id_cliente, nome_primeiro, nome_ultimo) values
-(3,'Jose','Silva'),
-(4,'Marcos','Trobbo');
-
-
-insert into clientes(id_cliente, titulo, nome_primeiro, nome_ultimo) values
-(5,'Doutor','Michael','Jackson'),
-(6,'Majestade','Pedro','Braganca');
-
-
-insert into clientes(id_cliente, nome_primeiro, nome_meio, nome_ultimo) values
-(7,'Franz','Ludwig','Ferdinand'),
-(8,'Pedro','de Alcantara','Gonzaga');
-
+(2,'Sra.','Ferdinanda','Pereira','Paz'),
+(3, null, 'Jose', null, 'Silva'),
+(4, null, 'Marcos', null, 'Trobbo'),
+(5,'Doutor','Michael', null,'Jackson'),
+(6,'Majestade','Pedro', null, 'Braganca'),
+(7, null, 'Franz','Ludwig','Ferdinand'),
+(8, null, 'Pedro','de Alcantara','Gonzaga');
 --ex 3
-select concat(case when titulo is not null then titulo + ' ' else '' end,
+select concat(
+	case when titulo is not null then titulo + ' ' else '' end,
 	nome_primeiro, 
 	case when nome_meio is not null then ' ' + nome_meio else '' end,
 	' ', 
