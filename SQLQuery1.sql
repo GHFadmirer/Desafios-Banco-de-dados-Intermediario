@@ -28,7 +28,7 @@ insert into Produto(id_produto, nome, valor_custo, preco_venda) values
 (6,'Liquidificador',50,95.10),
 (7,'Ibuprofeno',0.34,0.30),
 (8,'Violao',20,780),
-(9,'Camiseta',50.00);
+(9,'Camiseta',50,60);
 
 insert into ProdutoCategoria(id_categoria,id_produto,nome_categoria) values
 (1,1,'Eletronicos'),
